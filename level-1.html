@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heading, #start, #val, #n-1,#n-2,#n-3, #n-4, #n-5{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <a href="home.html">
+        <button>Back to Home</button>
+    </a>
+    <h1>LEVEL - 1</h1>
+    <p id="nums"></p>
+    <h1 id="heading">Write the numbers now in the same sequence in the boxes</h1>
+    <button id="start" onclick="startWriting()">Start Writing</button> <br>
+    
+    
+        <form>
+            <input type="number" id="n-1" placeholder="Number - 1"> <br>
+            <input type="number" id="n-2" placeholder="Number - 2"> <br>
+            <input type="number" id="n-3" placeholder="Number - 3"> <br>
+            <input type="number" id="n-4" placeholder="Number - 4"> <br>
+            <input type="number" id="n-5" placeholder="Number - 5"> <br>
+            <input type="submit" id="val" onclick="validateData()"> <br>
+        </form>
+   
+    <script>
+        // For geneating  random numbers
+            var a = Math.floor(Math.random()*10)
+            var b = Math.floor(Math.random()*10)
+            var c = Math.floor(Math.random()*10)
+            var d = Math.floor(Math.random()*10)
+            var e = Math.floor(Math.random()*10)
+            document.getElementById("nums").innerHTML = a+"<br>"+b+"<br>"+c+"<br>"+d+"<br>"+e+"<br>"
+            document.getElementById("heading").style.visibility = "visible"
+            document.getElementById("start").style.visibility = "visible"
+       
+        function startWriting(){
+            document.getElementById("nums").style.visibility = "hidden"
+            document.getElementById("start").style.visibility = "hidden"
+            document.getElementById("val").style.visibility = "visible"
+            document.getElementById("n-1").style.visibility = "visible"
+            document.getElementById("n-2").style.visibility = "visible"
+            document.getElementById("n-3").style.visibility = "visible"
+            document.getElementById("n-4").style.visibility = "visible"
+            document.getElementById("n-5").style.visibility = "visible"
+            
+        }
+         // For writing the generated numbers
+        function validateData(){
+            var a_1 = document.getElementById("n-1").value// = prompt("Enter first number")
+            var b_1 = document.getElementById("n-2").value// = prompt("Enter second number")
+            var c_1 = document.getElementById("n-3").value// = prompt("Enter third number")
+            var d_1 = document.getElementById("n-4").value// = prompt("Enter fourth number") 
+            var e_1 = document.getElementById("n-5").value// = prompt("Enter fifth number")
+            if(a_1==a && b_1==b && c_1==c && d_1==d && e_1==e)
+               {
+                   document.write("Well Done. You completed the Level-1<br>")
+                   document.write("Password for second level : aabbCDE123")
+                   return true
+               }
+            else{
+                document.write("Wrong Input!!! Try Again...")
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

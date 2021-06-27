@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level-5</title>
+    <style>
+        #headings,
+        #evaluate,
+        #one,
+        #two,
+        #three,
+        #four,
+        #five {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body onload="checkPassword()">
+    <a href="home.html">
+        <button>back to home</button>
+    </a>
+    <h1>level 5</h1>
+    <p id="nums"></p>
+    <h1 id="headings">write the numbers in the same sequence</h1>
+    <button id="starter" onclick="writing()">Write Numbers</button>
+    <form>
+        <input id="one" type="number" placeholder="enter first number"> <br>
+        <input id="two" type="number" placeholder="second number"> <br>
+        <input id="three" type="number" placeholder="third number"> <br>
+        <input id="four" type="number" placeholder="fourth number"> <br>
+        <input id="five" type="number" placeholder="fifth number"> <br>
+        <input type="submit" onclick="data()" id="evaluate" placeholder="submit">
+    </form>
+    <script>
+        var a = Math.floor(Math.random() * 10)
+        var b = Math.floor(Math.random() * 100)
+        var c = Math.floor(Math.random() * 1000)
+        var d = Math.floor(Math.random() * 10000)
+        var e = Math.floor(Math.random() * 100000)
+        document.getElementById("nums").innerHTML = a + "<br>" + b + "<br>" + c + "<br>" + d + "<br>" + e + "<br>"
+        document.getElementById("headings").style.visibility = "visible"
+        document.getElementById("starter").visibility = "visible"
+        function writing() {
+
+            document.getElementById("nums").style.visibility = "hidden"
+            document.getElementById("starter").style.visibility = "hidden"
+            document.getElementById("evaluate").style.visibility = "visible"
+            document.getElementById("one").style.visibility = "visible"
+            document.getElementById("two").style.visibility = "visible"
+            document.getElementById("three").style.visibility = "visible"
+            document.getElementById("four").style.visibility = "visible"
+            document.getElementById("five").style.visibility = "visible"
+
+        }
+
+        function data() {
+            var a_1 = document.getElementById("one").value// = prompt("Enter first number")
+            var b_1 = document.getElementById("two").value// = prompt("Enter second number")
+            var c_1 = document.getElementById("three").value// = prompt("Enter third number")
+            var d_1 = document.getElementById("four").value// = prompt("Enter fourth number") 
+            var e_1 = document.getElementById("five").value// = prompt("Enter fifth number")
+            if (a_1 == a && b_1 == b && c_1 == c && d_1 == d && e_1 == e) {
+                document.write("Well Done. You completed the Level-5<br>")
+                document.write("you have completed the game.")
+            }
+            else{
+                alert("Invalid Entry!!!")
+            }
+        }
+
+        function checkPassword(){
+            var pass = prompt("Enter Password : ")
+            if(pass=="2212")
+              {
+                  return true
+              }
+            else{
+                window.close("level-4.html")
+            }
+        }
+    </script>
+</body>
+
+</html>
